@@ -7,4 +7,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit.Console" Version="3.18.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+	<Compile Remove="GameOfLife.Test\**" />
+	<Content Remove="GameOfLife.Test\**" />
+    <EmbeddedResource Remove="GameOfLife.Test\**" />
+    <None Remove="GameOfLife.Test\**" />
+  </ItemGroup>
+
 </Project>

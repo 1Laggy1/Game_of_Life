@@ -1,6 +1,6 @@
 ﻿namespace GameOfLife
 {
-    internal class Cell
+    public class Cell
     {
         bool alive = false;
         public Cell() { }
