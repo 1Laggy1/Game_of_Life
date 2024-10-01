@@ -20,7 +20,7 @@ namespace GameOfLife.Test
 
 
             var cells = gridCells.InitializeCells();
-            Assert.That(cells.Length, Is.EqualTo(8));
+            Assert.That(cells.Length, Is.EqualTo(9));
 
             foreach (var row in cells)
             {
