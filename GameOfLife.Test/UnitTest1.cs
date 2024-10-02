@@ -19,8 +19,8 @@ namespace GameOfLife.Test
         {
 
 
-            var cells = gridCells.InitializeCells();
-            Assert.That(cells.Length, Is.EqualTo(9));
+            var cells = gridCells.InitializeCells(1, 8, 5);
+            Assert.That(cells.Length, Is.EqualTo(8));
 
             foreach (var row in cells)
             {
@@ -31,7 +31,7 @@ namespace GameOfLife.Test
         [Test]
         public void InitializeCells_CreatesNonNullCells()
         {
-            var cells = gridCells.InitializeCells();
+            var cells = gridCells.InitializeCells(1, 8, 5);
 
             foreach (var row in cells)
             {

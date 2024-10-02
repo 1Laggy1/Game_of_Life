@@ -2,21 +2,25 @@
 {
     public class GridCells
     {
-        public bool[][] Cells = new bool[8][];
-        public bool[][] InitializeCells()
+        public bool[][] Cells;
+        private bool[][] NextGenerationCells;
+        int generationNow;
+        int generationsMax;
+        public bool[][] InitializeCells(int generations, int x, int y)
         {
-            bool[][] cells = new bool[8][];
+            generationsMax = generations;
+            bool[][] cells = new bool[x][];
 
             for (int i = 0; i < cells.Length; i++)
             {
-                cells[i] = new bool[5];
+                cells[i] = new bool[y];
 
                 for (int j = 0; j < cells[i].Length; j++)
                 {
                     cells[i][j] = new bool();
                 }
             }
-
+            Cells = cells;
             return cells;
         }
     }
