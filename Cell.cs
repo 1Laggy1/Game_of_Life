@@ -2,7 +2,7 @@
 {
     public class Cell
     {
-        bool alive = false;
+        public bool alive = false;
         public Cell() { }
     }
 }

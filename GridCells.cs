@@ -2,32 +2,49 @@
 {
     public class GridCells
     {
-        public bool[][] Cells;
-        private bool[][] oldGenerationCells;
+        public Cell[][] Cells;
+        private Cell[][] oldGenerationCells;
         public int generationNow = 1;
         public int generationsMax;
         
-        public int Rows;
-        public int Columns;
+        public int X;
+        public int Y;
+        public GridCells(int generations, int x, int y){
 
-        public bool[][] InitializeCells(int generations, int x, int y)
-        {
             generationsMax = generations;
-            Rows = x; Columns = y;
-            bool[][] cells = new bool[x][];
+            X = x; Y = y;
+            InitializeCells();
+        }
+
+        public Cell[][] InitializeCells()
+        {
+            
+            Cell[][] cells = new Cell[X][];
 
             for (int i = 0; i < cells.Length; i++)
             {
-                cells[i] = new bool[y];
+                cells[i] = new Cell[Y];
 
                 for (int j = 0; j < cells[i].Length; j++)
                 {
-                    cells[i][j] = new bool();
+                    cells[i][j] = new Cell();
                 }
             }
             Cells = cells;
-            Program.PrintGrid(this);
             return cells;
+        }
+        public int CheckNeighbors(Cell[][] gridCells, int x, int y)
+        {
+            //int neighbors=0;
+            //for (int i = x + 1; i != ((x)+X+1)%(X+1); i=(i+1)%(X+1))
+            //{
+            //    if (!gridCells[i][y])
+            //    {
+            //        break;
+            //    }
+            //    neighbors++;
+            //}
+            return 0;
         }
     }
 }

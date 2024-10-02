@@ -6,7 +6,7 @@ namespace GameOfLife.Test
         [SetUp]
         public void Setup()
         {
-            gridCells = new GridCells();
+            
         }
 
         [Test]
@@ -18,8 +18,8 @@ namespace GameOfLife.Test
         public void InitializeCells_CreatesCorrectArraySize()
         {
 
-
-            var cells = gridCells.InitializeCells(1, 8, 5);
+            GridCells gridCells = new GridCells(1, 8, 5);
+            var cells = gridCells.InitializeCells();
             Assert.That(cells.Length, Is.EqualTo(8));
 
             foreach (var row in cells)
@@ -31,7 +31,8 @@ namespace GameOfLife.Test
         [Test]
         public void InitializeCells_CreatesNonNullCells()
         {
-            var cells = gridCells.InitializeCells(1, 8, 5);
+            GridCells gridCells = new GridCells(1, 8, 5);
+            var cells = gridCells.InitializeCells();
 
             foreach (var row in cells)
             {
