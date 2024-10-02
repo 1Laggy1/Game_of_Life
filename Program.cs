@@ -41,7 +41,7 @@ internal class Program
             }
         }
         PrintGrid(gridCells);
-        gridCells.CheckNeighbors(gridCells.Cells, 2, 2);
+        Console.WriteLine(gridCells.CheckNeighbors(gridCells.Cells, 1, 1));
         return gridCells;
     }
 }

@@ -14,6 +14,7 @@
             generationsMax = generations;
             X = x; Y = y;
             InitializeCells();
+            
         }
 
         public Cell[][] InitializeCells()
@@ -27,7 +28,7 @@
 
                 for (int j = 0; j < cells[i].Length; j++)
                 {
-                    cells[i][j] = new Cell();
+                    cells[i][j] = new Cell(i,j);
                 }
             }
             Cells = cells;
@@ -35,16 +36,7 @@
         }
         public int CheckNeighbors(Cell[][] gridCells, int x, int y)
         {
-            //int neighbors=0;
-            //for (int i = x + 1; i != ((x)+X+1)%(X+1); i=(i+1)%(X+1))
-            //{
-            //    if (!gridCells[i][y])
-            //    {
-            //        break;
-            //    }
-            //    neighbors++;
-            //}
-            return 0;
+            return gridCells[x][y].CheckNeighbors(this,new System.Numerics.Vector2(x,y));
         }
     }
 }

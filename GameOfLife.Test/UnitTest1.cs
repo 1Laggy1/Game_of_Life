@@ -42,5 +42,33 @@ namespace GameOfLife.Test
                 }
             }
         }
+        [Test]
+        public void CheckNeighbours_Simple()
+        {
+            GridCells gridCells = new GridCells(1, 8, 5);
+            gridCells.InitializeCells();
+            gridCells.Cells[1][1].alive = true;
+            gridCells.Cells[2][1].alive = true;
+            gridCells.Cells[0][1].alive = true;
+            gridCells.Cells[3][2].alive = true;
+            int actual = gridCells.CheckNeighbors(gridCells.Cells, 1, 1);
+            Assert.That(actual, Is.EqualTo(3));
+        }
+        [Test]
+        public void CheckNeighbours_CountThroughEdges()
+        {
+            GridCells gridCells = new GridCells(1, 8, 5);
+            gridCells.InitializeCells();
+            gridCells.Cells[1][1].alive = true;
+            gridCells.Cells[2][1].alive = true;
+            gridCells.Cells[0][1].alive = true;
+            gridCells.Cells[3][2].alive = true;
+            gridCells.Cells[5][2].alive = true;
+            gridCells.Cells[6][2].alive = true;
+            gridCells.Cells[7][2].alive = true;
+            gridCells.Cells[7][3].alive = true;
+            int actual = gridCells.CheckNeighbors(gridCells.Cells, 1, 1);
+            Assert.That(actual,Is.EqualTo(7));
+        }
     }
 }
