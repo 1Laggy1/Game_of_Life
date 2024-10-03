@@ -1,4 +1,5 @@
-﻿namespace GameOfLife
+﻿using System.Numerics;
+namespace GameOfLife
 {
     public class GridCells
     {
@@ -36,7 +37,27 @@
         }
         public int CheckNeighbors(Cell[][] gridCells, int x, int y)
         {
-            return gridCells[x][y].CheckNeighbors(this,new System.Numerics.Vector2(x,y));
+            return gridCells[x][y].CheckNeighbors(this,new Vector2(x,y));
+        }
+        public void Evolve()
+        {
+            oldGenerationCells = Cells;
+            generationNow++;
+            for (int i = 0; i < Cells.Length; i++)
+            {
+                for (int j = 0; j < Cells[i].Length; j++)
+                {
+                    int neighbours = Cells[i][j].CheckNeighbors(this, new Vector2(i, j));
+                    if (neighbours == 3)
+                    {
+                        Cells[i][j].alive = true;
+                    }
+                    else if (neighbours < 2 || neighbours > 3)
+                    {
+                        Cells[i][j].alive = false;
+                    }
+                }
+            }
         }
     }
 }

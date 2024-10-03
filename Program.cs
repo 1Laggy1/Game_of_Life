@@ -2,10 +2,13 @@
 
 internal class Program
 {
-    GridCells gridCells;
+    public GridCells gridCells;
     private static void Main(string[] args)
     {
         ReadGrid();
+        
+
+    
     }
     public static void PrintGrid(GridCells grid)
     {
@@ -41,7 +44,13 @@ internal class Program
             }
         }
         PrintGrid(gridCells);
-        Console.WriteLine(gridCells.CheckNeighbors(gridCells.Cells, 1, 1));
+        for (int i = 0; i < gridCells.generationsMax; i++)
+        {
+            gridCells.Evolve();
+            PrintGrid(gridCells);
+        }
+        
+        Console.WriteLine(gridCells.CheckNeighbors(gridCells.Cells, 0, 1));
         return gridCells;
     }
 }

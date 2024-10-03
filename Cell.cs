@@ -5,7 +5,7 @@ namespace GameOfLife
     public class Cell
     {
         public bool alive = false;
-        public bool counted = false;
+        //public bool counted = false;
         int X, Y;
         Vector2[] neighboursVectors = new Vector2[8]
         {
@@ -26,10 +26,10 @@ namespace GameOfLife
         public int CheckNeighbors(GridCells grid, Vector2 start)
         {
             int neighbours=0;
-            if (!counted && alive && !(start.X==X && start.Y==Y))
+            if (alive && !(start.X==X && start.Y==Y))
             {
                 neighbours++;
-                counted = true;
+                //counted = true;
                 return neighbours;
             }
             else if (!(start.X == X && start.Y == Y))
