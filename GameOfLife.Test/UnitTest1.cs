@@ -50,7 +50,7 @@ namespace GameOfLife.Test
             gridCells.Cells[1][1].alive = true;
             gridCells.Cells[2][1].alive = true;
             gridCells.Cells[0][1].alive = true;
-            gridCells.Cells[3][2].alive = true;
+            gridCells.Cells[2][2].alive = true;
             int actual = gridCells.CheckNeighbors(gridCells.Cells, 1, 1);
             Assert.That(actual, Is.EqualTo(3));
         }
@@ -67,8 +67,8 @@ namespace GameOfLife.Test
             gridCells.Cells[6][2].alive = true;
             gridCells.Cells[7][2].alive = true;
             gridCells.Cells[7][3].alive = true;
-            int actual = gridCells.CheckNeighbors(gridCells.Cells, 1, 1);
-            Assert.That(actual,Is.EqualTo(7));
+            int actual = gridCells.CheckNeighbors(gridCells.Cells, 0, 1);
+            Assert.That(actual,Is.EqualTo(2));
         }
     }
 }

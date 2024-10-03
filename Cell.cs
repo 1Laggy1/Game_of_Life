@@ -30,6 +30,7 @@ namespace GameOfLife
             {
                 neighbours++;
                 counted = true;
+                return neighbours;
             }
             else if (!(start.X == X && start.Y == Y))
             {
