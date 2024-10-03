@@ -4,7 +4,7 @@ namespace GameOfLife
     public class GridCells
     {
         public Cell[][] Cells;
-        private Cell[][] oldGenerationCells;
+        public Cell[][] oldGenerationCells;
         public int generationNow = 1;
         public int generationsMax;
         
@@ -41,13 +41,13 @@ namespace GameOfLife
         }
         public void Evolve()
         {
-            oldGenerationCells = Cells;
+            oldGenerationCells = DeepCopy(Cells);
             generationNow++;
             for (int i = 0; i < Cells.Length; i++)
             {
                 for (int j = 0; j < Cells[i].Length; j++)
                 {
-                    int neighbours = Cells[i][j].CheckNeighbors(this, new Vector2(i, j));
+                    int neighbours = oldGenerationCells[i][j].CheckNeighbors(this, new Vector2(i, j));
                     if (neighbours == 3)
                     {
                         Cells[i][j].alive = true;
@@ -59,5 +59,27 @@ namespace GameOfLife
                 }
             }
         }
+        public Cell[][] DeepCopy(Cell[][] original)
+        {
+            int rows = original.Length;
+            int cols = original[0].Length;
+
+            Cell[][] copy = new Cell[rows][];
+
+            for (int i = 0; i < rows; i++)
+            {
+                copy[i] = new Cell[cols];
+                for (int j = 0; j < cols; j++)
+                {
+                    copy[i][j] = new Cell(i,j)
+                    {
+                        alive = original[i][j].alive
+                    };
+                }
+            }
+
+            return copy;
+        }
+
     }
 }

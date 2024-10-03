@@ -50,7 +50,6 @@ internal class Program
             PrintGrid(gridCells);
         }
         
-        Console.WriteLine(gridCells.CheckNeighbors(gridCells.Cells, 0, 1));
         return gridCells;
     }
 }

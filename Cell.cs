@@ -39,7 +39,7 @@ namespace GameOfLife
             Vector2 vector2 = new Vector2(X, Y);
             foreach (Vector2 vector in neighboursVectors)
             {
-                neighbours += grid.Cells[((X+(int)vector.X) + grid.X) % (grid.X)][(Y+(int)vector.Y + grid.Y) % (grid.Y)].CheckNeighbors(grid,start);
+                neighbours += grid.oldGenerationCells[((X+(int)vector.X) + grid.X) % (grid.X)][(Y+(int)vector.Y + grid.Y) % (grid.Y)].CheckNeighbors(grid, start);
             }
             return neighbours;
         }

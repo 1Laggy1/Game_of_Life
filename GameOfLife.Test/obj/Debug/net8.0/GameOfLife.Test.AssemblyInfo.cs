@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GameOfLife.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8766a823b18bf017d98619afae173fa51edcbcf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+869c790165dd0e96029e8fba629b5190ad24feba")]
 [assembly: System.Reflection.AssemblyProductAttribute("GameOfLife.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GameOfLife.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
